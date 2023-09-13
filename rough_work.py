@@ -14,7 +14,7 @@ def db_connect():
             host='sql10.freesqldatabase.com',
             database='sql10646166',
             user='sql10646166',
-            password='mgmaMA1dSl',
+            password='mg',
             charset='utf8mb4',
             cursorclass=pymysql.cursors.DictCursor
             )
