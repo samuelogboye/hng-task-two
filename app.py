@@ -18,11 +18,9 @@ class User(db.Model):
 # CREATE Operation (POST)
 @app.route('/api/', methods=['POST'])
 def create_user():
-    name = request.form.get('name')
-    """
     data = request.get_json()
     name = data.get('name')
-    """
+
 
     if not name:
         return jsonify({'error': 'Please provide a name'}), 400
@@ -35,7 +33,7 @@ def create_user():
     db.session.add(new_user)
     db.session.commit()
 
-    return jsonify({'message': 'User created successfully'}), 201
+    return jsonify({'id': new_user.id, 'name': new_user.name, 'message': 'User created successfully'}), 201
 
 # READ Operation (GET)
 @app.route('/api/<int:user_id>', methods=['GET'])
@@ -43,7 +41,7 @@ def read_user(user_id):
     user = User.query.get(user_id)
 
     if not user:
-        return jsonify({'error': 'User not found'}), 404
+        return jsonify({'error': 'User not found/ID not in Database'}), 404
 
     return jsonify({'id': user.id, 'name': user.name}), 200
 
@@ -53,7 +51,7 @@ def update_user(user_id):
     user = User.query.get(user_id)
 
     if not user:
-        return jsonify({'error': 'User not found'}), 404
+        return jsonify({'error': 'User not found/ID not in Database'}), 404
 
     data = request.get_json()
     name = data.get('name')
@@ -63,7 +61,7 @@ def update_user(user_id):
 
     db.session.commit()
 
-    return jsonify({'message': 'User updated successfully'}), 200
+    return jsonify({'id': user.id, 'name': user.name, 'message': 'User updated successfully'}), 200
 
 # DELETE Operation (DELETE)
 @app.route('/api/<int:user_id>', methods=['DELETE'])
@@ -71,12 +69,12 @@ def delete_user(user_id):
     user = User.query.get(user_id)
 
     if not user:
-        return jsonify({'error': 'User not found'}), 404
+        return jsonify({'error': 'User not found/ID not in Database'}), 404
 
     db.session.delete(user)
     db.session.commit()
 
-    return jsonify({'message': 'User deleted successfully'}), 200
+    return jsonify({'id': user.id, 'name': user.name, 'message': 'User deleted successfully'}), 200
 
 # READ Operation for Listing All Users (GET)
 @app.route('/api/users', methods=['GET'])
