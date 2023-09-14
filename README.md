@@ -13,18 +13,23 @@ This Flask API allows you to perform CRUD operations on user data. It uses SQLAl
 ```bash
 git clone https://github.com/samuelogboye/hng-task-two
 ```
+
 Navigate to to hng-task-two directory
+
 ```bash
 cd hng-task-two
 ```
 
 2. Create a virtual environment (optional but recommended):
+
 ```bash
 python -m venv venv
 ```
+
 ```bash
 source venv/bin/activate  # On Windows, use venv\Scripts\activate
 ```
+
 3. Install dependencies:
 
 ```bash
@@ -36,6 +41,7 @@ pip install -r requirements.txt
 ```bash
 DATABASE_URI=mysql+pymysql://username:password@localhost/mydatabase
 ```
+
 5. Run the application:
 
 ```bash
@@ -43,8 +49,8 @@ python app.py
 ```
 
 ## UML Diagram
-![UML DIAGRAM](UML Diagram.png)
 
+![UML DIAGRAM](UML-Diagram.png)
 
 ## API Endpoints
 
@@ -69,4 +75,3 @@ pytest
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details.
-
