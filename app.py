@@ -41,7 +41,7 @@ def read_user(user_id):
     user = User.query.get(user_id)
 
     if not user:
-        return jsonify({'error': 'User not found/ID not in Database'}), 404
+        return jsonify({'error': 'User not found/id not in Database'}), 404
 
     return jsonify({'id': user.id, 'name': user.name}), 200
 
@@ -51,7 +51,7 @@ def update_user(user_id):
     user = User.query.get(user_id)
 
     if not user:
-        return jsonify({'error': 'User not found/ID not in Database'}), 404
+        return jsonify({'error': 'User not found/id not in Database'}), 404
 
     data = request.get_json()
     name = data.get('name')
