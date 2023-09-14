@@ -20,7 +20,9 @@ cd hng-task-two
 
 2. Create a virtual environment (optional but recommended):
 ```bash
-   python -m venv venv
+python -m venv venv
+```
+```bash
 source venv/bin/activate  # On Windows, use venv\Scripts\activate
 ```
 3. Install dependencies:
