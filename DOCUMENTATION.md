@@ -3,15 +3,16 @@
 This documentation outlines the usage, formats, and setup instructions for the My Flask API.
 
 ## UML Diagram
+
 https://imgur.com/a/d1ECDQm
 ![UML DIAGRAM](UML-Diagram.png)
-
 
 ## Standard Request and Response Formats
 
 ### Create User (POST /api/)
 
 **Request Format:**
+
 ```json
 {
   "name": "John Doe"
@@ -22,9 +23,9 @@ Response Format (Success - HTTP 201):
 
 ```json
 {
-    "id": 9,
-    "message": "User created successfully",
-    "name": "John Doe"
+  "id": 9,
+  "message": "User created successfully",
+  "name": "John Doe"
 }
 ```
 
@@ -59,26 +60,27 @@ Response Format (Error - HTTP 404 - User Not Found):
 
 ```json
 {
-  "error": "User not found"
+  "error": "User not found/id not in Database"
 }
 ```
 
 ### Update User by ID (PUT /api/int:user_id or PATCH /api/int:user_id)
 
 Request Format:
+
 ```json
 {
   "name": "New Name"
 }
-````
+```
 
 Response Format (Success - HTTP 200):
 
 ```json
 {
-  "id": 17,
+  "id": 15,
   "message": "User updated successfully",
-  "name": "Davido"
+  "name": "New Name"
 }
 ```
 
@@ -86,16 +88,19 @@ Response Format (Error - HTTP 404 - User Not Found):
 
 ```json
 {
-  "error": "User not found"
+  "error": "User not found/id not in Database"
 }
 ```
 
 ### Delete User by ID (DELETE /api/int:user_id)
 
 Response Format (Success - HTTP 200):
+
 ```json
 {
-  "message": "User deleted successfully"
+  "id": 30,
+  "message": "User deleted successfully",
+  "name": "Temitope"
 }
 ```
 
@@ -103,13 +108,14 @@ Response Format (Error - HTTP 404 - User Not Found):
 
 ```json
 {
-  "error": "User not found"
+  "error": "User not found/id not in Database"
 }
 ```
 
 ### List All Users (GET /api/users)
 
 Response Format (Success - HTTP 200):
+
 ```json
 [
   {
@@ -124,6 +130,7 @@ Response Format (Success - HTTP 200):
 ```
 
 ## Sample Usage
+
 ### Creating a User
 
 Request:
@@ -138,20 +145,25 @@ Content-Type: application/json
 ```
 
 Response (HTTP 201):
+
 ```json
 {
-  "message": "User created successfully"
+  "id": 9,
+  "message": "User created successfully",
+  "name": "John Doe"
 }
 ```
 
 ### Getting User by ID
 
 Request:
+
 ```http
 GET /api/1
 ```
 
 Response (HTTP 200):
+
 ```json
 {
   "id": 1,
@@ -160,21 +172,25 @@ Response (HTTP 200):
 ```
 
 ### Updating User by ID
+
 Request:
 
-```http
+````http
 PUT /api/1
 Content-Type: application/json
-
+```http
 {
   "name": "Updated Name"
 }
-```
+````
 
 Response (HTTP 200):
+
 ```json
 {
-  "message": "User updated successfully"
+  "id": 15,
+  "message": "User updated successfully",
+  "name": "Updated Name"
 }
 ```
 
@@ -183,6 +199,7 @@ Response (HTTP 200):
 The API assumes that the name field is a required attribute for creating and updating users. It validates that the name is a string.
 
 ## Setup and Deployment Instructions
+
 ### Local Setup
 
 1. Clone the repository:
@@ -190,18 +207,23 @@ The API assumes that the name field is a required attribute for creating and upd
 ```bash
 git clone https://github.com/samuelogboye/hng-task-two
 ```
+
 Navigate to to hng-task-two directory
+
 ```bash
 cd hng-task-two
 ```
 
 2. Create a virtual environment (optional but recommended):
+
 ```bash
 python -m venv venv
 ```
+
 ```bash
 source venv/bin/activate  # On Windows, use venv\Scripts\activate
 ```
+
 3. Install dependencies:
 
 ```bash
@@ -213,12 +235,12 @@ pip install -r requirements.txt
 ```bash
 DATABASE_URI=mysql+pymysql://username:password@localhost/mydatabase
 ```
+
 5. Run the application:
 
 ```bash
 python app.py
 ```
-
 
 ## API Endpoints
 
@@ -243,6 +265,3 @@ pytest
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details.
-
-
-

@@ -49,6 +49,7 @@ python app.py
 ```
 
 ## UML Diagram
+
 https://imgur.com/a/d1ECDQm
 
 ![UML-Diagram.png](https://imgur.com/a/d1ECDQm)
@@ -65,13 +66,6 @@ https://imgur.com/a/d1ECDQm
 ## Configuration
 
 You can customize the application by modifying the environment variables in the .env file.
-Testing
-
-To run tests, use the following command:
-
-```bash
-pytest
-```
 
 ## License
 
