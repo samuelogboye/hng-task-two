@@ -9,7 +9,7 @@ https://imgur.com/a/d1ECDQm
 
 ## Standard Request and Response Formats
 
-### Create User (POST /api/)
+### Create User (POST /api)
 
 **Request Format:**
 
@@ -112,7 +112,7 @@ Response Format (Error - HTTP 404 - User Not Found):
 }
 ```
 
-### List All Users (GET /api/users)
+### List All Users (GET /api)
 
 Response Format (Success - HTTP 200):
 

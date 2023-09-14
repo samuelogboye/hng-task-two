@@ -7,6 +7,7 @@ load_dotenv()
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URI')
+app.config.json_sort_keys = False
 
 db = SQLAlchemy(app)
 
@@ -16,7 +17,7 @@ class User(db.Model):
     name = db.Column(db.String(255), nullable=False)
 
 # CREATE Operation (POST)
-@app.route('/api/', methods=['POST'])
+@app.route('/api', methods=['POST'])
 def create_user():
     data = request.get_json()
     name = data.get('name')
@@ -77,7 +78,7 @@ def delete_user(user_id):
     return jsonify({'id': user.id, 'name': user.name, 'message': 'User deleted successfully'}), 200
 
 # READ Operation for Listing All Users (GET)
-@app.route('/api/users', methods=['GET'])
+@app.route('/api', methods=['GET'])
 def list_users():
     users = User.query.all()
     user_list = [{'id': user.id, 'name': user.name} for user in users]
