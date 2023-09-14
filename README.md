@@ -42,6 +42,9 @@ DATABASE_URI=mysql+pymysql://username:password@localhost/mydatabase
 python app.py
 ```
 
+## UML Diagram
+![UML DIAGRAM](UML Diagram.png)
+
 
 ## API Endpoints
 
