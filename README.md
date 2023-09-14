@@ -49,6 +49,7 @@ python app.py
 ```
 
 ## UML Diagram
+https://imgur.com/a/d1ECDQm
 
 ![UML-Diagram.png](https://imgur.com/a/d1ECDQm)
 
