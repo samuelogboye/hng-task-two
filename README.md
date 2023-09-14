@@ -50,7 +50,7 @@ python app.py
 
 ## UML Diagram
 
-![UML DIAGRAM](UML-Diagram.png)
+![UML-Diagram.png](https://imgur.com/a/d1ECDQm))
 
 ## API Endpoints
 
