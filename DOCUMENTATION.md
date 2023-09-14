@@ -2,6 +2,11 @@
 
 This documentation outlines the usage, formats, and setup instructions for the My Flask API.
 
+## UML Diagram
+https://imgur.com/a/d1ECDQm
+![UML DIAGRAM](UML-Diagram.png)
+
+
 ## Standard Request and Response Formats
 
 ### Create User (POST /api/)
@@ -209,9 +214,7 @@ DATABASE_URI=mysql+pymysql://username:password@localhost/mydatabase
 ```bash
 python app.py
 ```
-## UML Diagram
 
-![UML DIAGRAM](UML-Diagram.png)
 
 ## API Endpoints
 
