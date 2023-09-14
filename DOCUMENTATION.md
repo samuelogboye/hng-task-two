@@ -22,7 +22,9 @@ Response Format (Success - HTTP 201):
 
 ```json
 {
-  "message": "User created successfully"
+    "id": 9,
+    "message": "User created successfully",
+    "name": "John Doe"
 }
 ```
 
@@ -74,7 +76,9 @@ Response Format (Success - HTTP 200):
 
 ```json
 {
-  "message": "User updated successfully"
+  "id": 17,
+  "message": "User updated successfully",
+  "name": "Davido"
 }
 ```
 
